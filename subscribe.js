@@ -9,6 +9,6 @@ client.on('connect', function(){
 
 
 client.on('message', function (topic, message){
-    //console.log(message.toString()); //if toString is not given, the message comes as buffer
+    // console.log(message.toString()); //if toString is not given, the message comes as buffer
     document.getElementById("potensiometer").innerHTML = message.toString();
   });

@@ -13,10 +13,13 @@
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <link rel="stylesheet" href="./assets/main.css">
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <!-- Script -->
   <script src="./assets/browserMqtt.js"></script>
   <script src="./subscribe.js"></script>
+  
   <!-- <script src="./publish.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <script type="text/javascript">
@@ -55,6 +58,7 @@
       client.send(message);
     }
   </script>
+
   <title>Hello, world!</title>
 
 
@@ -65,25 +69,20 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h3 class="card-title text-center">Potensiometer</h5>
+            <h3 class="text-center">Potensiometer</h5>
               <h1 id="potensiometer" class="text-center">0</h1>
-
-              <input id="toggle-event" type="checkbox" data-toggle="toggle">  aa
-              <div id="console-event"></div>
-              <script>
-                $(function () {
-                  $('#toggle-event').click(function () {
-                    document.getElementById("toggle-event").innerHTML = "brubah";
-                  })
-                })
-              </script>
               <hr class="my-4">
-
-
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" onclick="publish_msg()"><i
+              <h3 class="card-title text-center">Switch Lamp</h5>
+              <div class= "d-flex justify-content-center align-items-center">
+              <label class="switch">
+                <input type="checkbox">
+                <div class="slider round"></div>
+              </label>
+            </div>
+              <!-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" onclick="publish_msg()"><i
                   class="fab fa-facebook-f mr-2"></i> Turn On Lamp</button>
               <button class="btn btn-lg btn-google btn-block text-uppercase" onclick="publish_msg0()"><i
-                  class="fab fa-google mr-2"></i> Turn Off Lamp</button>
+                  class="fab fa-google mr-2"></i> Turn Off Lamp</button> -->
               </form>
           </div>
         </div>
@@ -95,6 +94,23 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+      var checkbox = document.querySelector('input[type="checkbox"]');
+  
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          // do this
+          console.log('Checked');
+          publish_msg();
+        } else {
+          // do that
+          publish_msg0();
+          console.log('Not checked');
+        }
+      });
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
