@@ -26,6 +26,10 @@ app.get('/assets/browserMQTT.js', function (req, res) {
     res.sendFile(path.join(__dirname + '/assets/browserMQTT.js'));
 });
 
+app.get('/node_modules/chart.js/dist/Chart.js', function (req, res) {
+    res.sendFile(path.join(__dirname + '/node_modules/chart.js/dist/Chart.js'));
+});
+
 
 //filenode
 app.get('/subscribe.js', function (req, res) {
