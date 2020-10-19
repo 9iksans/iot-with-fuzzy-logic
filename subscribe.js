@@ -8,6 +8,7 @@ client.on('connect', function () {
         qos: 1
     });
     console.log("Client Has subscribe to MQTT broker")
+    drawChart();
 });
 
 
@@ -16,13 +17,13 @@ client.on('message', function (topic, message) {
     // console.log(message.toString()); //if toString is not given, the message comes as buffer
     document.getElementById("potensiometer").innerHTML = message.toString();
     dataGet = message.toString();
-    delayChart();
+    drawChart();
 });
 
 // setInterval(delayChart, 1000);
 
 
-function delayChart() {
+function drawChart() {
     for (var i = 0; i < 20; i++) {
         dataChart[i] = dataChart[i + 1];
     }
@@ -32,7 +33,7 @@ function delayChart() {
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'Now'],
+            labels: [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'Now'],
             datasets: [{
                 label: 'Potensiometer',
                 data: dataChart,
@@ -57,7 +58,8 @@ function delayChart() {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: false
+                        min :0 ,
+                        max : 1200
                     }
                 }]
             }

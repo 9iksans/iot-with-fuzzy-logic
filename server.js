@@ -4,13 +4,6 @@ var mqtt = require('mqtt')
 const port = 3000
 const fs = require("fs")
 var path = require('path')
-var clientlampu = mqtt.connect('ws://192.168.137.1:9001')
-
-// subpub lampu
-clientlampu.on('connect', function(){
-    clientlampu.subscribe("/aktuator/lampu",{qos:1});
-    console.log("Client Has subscribe to MQTT broker topic /aktuator/lampu ")
-});
 
 
 
