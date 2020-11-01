@@ -58,8 +58,6 @@ dont forget to upload the arduino program to NodeMCU ESP8266, that is where the 
 
 
 ## Credits
-This project to Team-1 Teknik Kompilasi CE2K17
-
-
+This project belongs to Team-1 Teknik Kompilasi CE2K17
 
 EEPIS © [Team-1 Teknik Kompilasi CE217](https://github.com/9iksans)
