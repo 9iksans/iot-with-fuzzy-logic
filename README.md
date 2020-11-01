@@ -5,9 +5,14 @@ This is an Assignment to make simple IoT Project from Worksho Teknik Kompilasi C
 ## Description
 This project purpose is to make some monitoring a Potentiometer and controll LED via website
 
-## Screenshots
-Will Soon Update
+## Video Documentation
+[![IoT Project Workshop Teknik Kompilasi CE 2017](https://i.ytimg.com/vi/GtCJnHdL41Q/hqdefault.jpg)](https://www.youtube.com/watch?v=GtCJnHdL41Q&list=PLXA2ixTftgBN1AUagIgYz1PbGW8RsYSud)
 
+## Tools
+  - NodeMCU ESP8266
+  - Potentiometer 10k Ohms
+  - BreadBoard
+  - LED
 
 ## Installation
 
