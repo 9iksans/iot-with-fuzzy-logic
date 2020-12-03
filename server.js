@@ -15,23 +15,8 @@ app.get('/', function (req, res) {
 });
 
 // script
-app.get('/assets/browserMQTT.js', function (req, res) {
-    res.sendFile(path.join(__dirname + '/assets/browserMQTT.js'));
-});
 
-app.get('/node_modules/chart.js/dist/Chart.js', function (req, res) {
-    res.sendFile(path.join(__dirname + '/node_modules/chart.js/dist/Chart.js'));
-});
+app.use("/web",express.static(path.join(__dirname,'/public/')))
 
-
-//filenode
-app.get('/subscribe.js', function (req, res) {
-    res.sendFile(path.join(__dirname + '/subscribe.js'));
-});
-
-//css
-app.get('/assets/main.css', function (req, res) {
-    res.sendFile(path.join(__dirname + '/assets/main.css'));
-});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

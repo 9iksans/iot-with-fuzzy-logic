@@ -18,6 +18,8 @@
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <!-- Script -->
   <script src="./assets/browserMqtt.js"></script>
+  <script src="./assets/browserKafka.js"></script>
+  
   <script src="./subscribe.js"></script>
   <script src="node_modules/chart.js/dist/Chart.js"></script>
 
@@ -26,7 +28,7 @@
   <script type="text/javascript">
     var mqtt;
     var reconnectTimeout = 2000;
-    var host = "192.168.137.1";
+    var host = "x2.hcm-lab.id";
     var port = 9001;
 
     function publish_msg() {
