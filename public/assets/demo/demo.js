@@ -18,6 +18,9 @@ client.on('connect', function () {
     client.subscribe("/aktuator/fuzzylamp", {
       qos: 1
     });
+    client.subscribe("/aktuator/class", {
+      qos: 1
+    });
 
 
     console.log("Client Has subscribe to MQTT broker")
@@ -35,6 +38,7 @@ client.on('message', function (topic, message) {
       document.getElementById("cahaya-val").innerHTML = message.toString() + " Lumens";
       dataGetCahaya = message.toString();
       // demo.initChartsPages();
+      
 
     }
     if(topic === '/aktuator/fuzzylamp'){
@@ -42,9 +46,10 @@ client.on('message', function (topic, message) {
       dataGetLamp = message.toString();
       // demo.initChartsPages(); 
       pushArray(dataGetTemp,dataGetCahaya,dataGetLamp)
-
     }
-
+    if(topic === '/aktuator/class'){
+      document.getElementById("class-val").innerHTML = message.toString();
+    }
 
 });
 
